@@ -1,0 +1,7 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+export { BaseChartDirective } from './chart.directive';
+export { ChartsModule } from './chart.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly9hbmd1bGFyLWJvb3RzdHJhcC1tZC8iLCJzb3VyY2VzIjpbImxpYi9mcmVlL2NoYXJ0cy9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsbUNBQWMsbUJBQW1CLENBQUM7QUFHbEMsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLGdCQUFnQixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0ICogZnJvbSAnLi9jaGFydC5kaXJlY3RpdmUnO1xuZXhwb3J0IHsgQ29sb3IgfSBmcm9tICcuL2NvbG9yLmludGVyZmFjZSc7XG5leHBvcnQgeyBDb2xvcnMgfSBmcm9tICcuL2NvbG9ycy5pbnRlcmZhY2UnO1xuZXhwb3J0IHsgQ2hhcnRzTW9kdWxlIH0gZnJvbSAnLi9jaGFydC5tb2R1bGUnO1xuIl19

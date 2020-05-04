@@ -1,0 +1,18 @@
+
+<mat-toolbar color="primary"> 
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+      </button> 
+       <h1>watchNext</h1>
+      <span class="menu-spacer"></span>
+      <div class="menu-items">
+        <a mat-button [routerLink]="'/home'"> Home </a>
+        <a mat-button [routerLink]="'/movie'"> Movie</a>
+        <a mat-button [routerLink]="'/tv-shows'"> TV Shows</a>
+        <a mat-button [routerLink]="'/trending'"> Trending </a>
+        <a mat-button [routerLink]="'/top-imdb'"> Top IMDB</a>
+        <a mat-button [routerLink]="'/episodes'"> Episodes</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar> 
