@@ -17,7 +17,7 @@ export class MovieService {
   this._http 
   .get('https://api.themoviedb.org/3/search/movie',{
   params: {
-    api_key: 'bd485c6f6e25c230e7e0cd73d0bbb20c',
+    api_key: 'enter your API key',
     query: searchVal
   }})
   // .pipe(map(responseData => {
@@ -33,7 +33,7 @@ export class MovieService {
     this._http 
   .get('https://api.themoviedb.org/3/movie/'+id+'/images',{
   params: {
-    api_key: 'bd485c6f6e25c230e7e0cd73d0bbb20c',
+    api_key: 'enter your API key',
   }})
   .subscribe(movieDetail => {
     console.log("moviedetails",movieDetail)
