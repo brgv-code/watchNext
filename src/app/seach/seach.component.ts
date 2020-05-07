@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { MovieService } from '../shared/movie.service';
 
 @Component({
@@ -14,14 +15,17 @@ export class SeachComponent implements OnInit {
   ngOnInit() {
   }
 
-  getMovies(){
+ getMovies(){
     
-    return this.movies = this.movieService.movieList;
-    // movielist.forEach( res => {
-    //   this.movieService.GetMovieDetails(res.id);
-    // })
-    
-    
+     return this.movies =  this.movieService.movieList;
+    // console.log(this.movie  s);
+    // this.movies.forEach( res => {
+    //   this.movies.poster_path? this.movies
+    // }) 
+  }
+  getMovieDetail(event){
+    // const movieID = document.querySelectorAll('.movieCard');
+    console.log(event);
   }
 
 }

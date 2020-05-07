@@ -1,7 +1,7 @@
 <div class="img-responsive">
   <div class="movieListContainer" *ngIf="getMovies()">
-    <div class="movieCard" *ngFor="let movie of movies">
-      <div class="card">
+    <div class=" row movieCard" *ngFor="let movie of movies"(click)="getMovieDetail($event)">
+     <div class="col-sm-6 col-md-12 card">
         <img class="card-img-top" src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{movie.title}}</h5>

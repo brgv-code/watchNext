@@ -9,15 +9,22 @@
     display: flex
     justify-content: space-between
     flex-flow: row wrap
+    overflow: hidden
     &:after 
         content: ""
         flex: auto
   
 
 .movieCard
-    flex-basis: 25%
-    width: 24%
-    padding: 50px 10px
+    flex-basis: 15%
+    // width: 200px
+    margin: 50px 10px
+
+    &:hover 
+        cursor: pointer
+
+.col-md-12
+    padding:0
 
 // // .card
 // //     align-content: start
