@@ -7,6 +7,7 @@ import { TrendingComponent } from './trending/trending.component';
 import { TopimdbComponent } from './topimdb/topimdb.component';
 import { TvshowsComponent } from './tvshows/tvshows.component';
 import { EpisodesComponent } from './episodes/episodes.component';
+import { SeachComponent } from './seach/seach.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path:'trending',component: TrendingComponent },
   { path:'top-imdb',component: TopimdbComponent },
   { path:'tv-shows',component: TvshowsComponent },
-  { path:'episodes',component: EpisodesComponent }
+  { path:'episodes',component: EpisodesComponent },
+  { path:'search',component: SeachComponent }
 ];
 
 @NgModule({

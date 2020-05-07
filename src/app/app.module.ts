@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import {  MatToolbarModule, 
           MatIconModule,
@@ -23,6 +23,8 @@ import { TopimdbComponent } from './topimdb/topimdb.component';
 import { EpisodesComponent } from './episodes/episodes.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { PostComponent } from './post/post.component';
+import { SeachComponent } from './seach/seach.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { HeaderComponent } from './header/header.component';
     TopimdbComponent,
     EpisodesComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    PostComponent,
+    SeachComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,8 @@ import { HeaderComponent } from './header/header.component';
     MatSidenavModule,
     MatCardModule,
     MatInputModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    HttpClientModule
     
   ],
   schemas: [NO_ERRORS_SCHEMA],

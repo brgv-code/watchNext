@@ -1,0 +1,28 @@
+<div class="img-responsive">
+  <div class="movieListContainer" *ngIf="getMovies()">
+    <div class="movieCard" *ngFor="let movie of movies">
+      <div class="card">
+        <img class="card-img-top" src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{movie.title}}</h5>
+          <!-- <p class="card-text">{{movie.overview | slice :0:100}}...</p> -->
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="d-flex flex-wrap justify-content-md-between justify-content-center">
+  <div class="movie-card card" *ngFor="let movie of movies">
+    <a href="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}">
+    <img
+    src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}" alt="Card image cap"
+        class="fadeIn animated card-img-top"></a>
+    <div class="card-body"><a href="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}">
+      <span class="card-rating">6</span>
+        <div class="mb-1 mr-4 card-title">{{movie.title}}</div>
+        <p class="small mb-0">Drama, Science Fiction</p>
+      </a></div>
+  </div>
+</div> -->
