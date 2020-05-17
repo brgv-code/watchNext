@@ -13,7 +13,7 @@ import { SeachComponent } from './seach/seach.component';
 const routes: Routes = [
   { path:'',component: HomeComponent },
   { path:'home',component: HomeComponent },
-  { path:'movie',component: MovieComponent },
+  { path:'movie/:id',component: MovieComponent },
   { path:'trending',component: TrendingComponent },
   { path:'top-imdb',component: TopimdbComponent },
   { path:'tv-shows',component: TvshowsComponent },

@@ -1,0 +1,69 @@
+@import '../../styles'
+    
+.container
+    display: flex
+    flex-direction: column
+    width: 75%
+    padding-right: 15px
+    padding-left: 15px
+    margin-right: auto
+    margin-left: auto
+    @media (min-width: 120rem) 
+        max-width: 114rem
+    .movie 
+        margin-top: 13rem
+        position: relative
+        display: grid
+        grid-template: "image info" "image stat"
+        justify-content: start
+        grid-template-columns: 300px 1fr 
+        background-color: rgba(0,0,0,.5)
+        color: #dee2e6
+        &__img
+            width: 300px
+            grid-area: image
+            -webkit-animation: animateScale 1s ease
+            animation: animateScale 1s ease
+        &__info 
+            grid-area: info
+            display: flex
+            padding: 1rem
+            align-items: flex-start
+            justify-content: space-between
+            flex-direction: column
+            &--title
+                color: #ffc107
+                margin-right: 30px
+                font-size: 2rem
+                margin-bottom: .5rem
+                font-weight: 500
+                line-height: 1.2
+            &--tagline
+                -webkit-animation: animateOpacity 2s ease
+                animation: animateOpacity 2s ease
+                margin-bottom: 15px
+                font-size: 1.2em
+                margin-bottom: .5rem
+                font-weight: 500
+                line-height: 1.2
+                color: #fff
+        &__control
+            margin-bottom: 2rem
+            &--rating
+                position: absolute
+                top: .7rem
+                right: .7rem
+                margin: .4rem
+                background-color: transparent
+                padding: .8rem
+                text-align: center
+                display: inline-block
+                z-index: 100
+                width: 55px
+                font-size: 2rem
+                border-radius: 50%
+                border: 2px solid #28a745
+
+            
+
+        

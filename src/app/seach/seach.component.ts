@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { MovieService } from '../shared/movie.service';
 
@@ -8,7 +8,10 @@ import { MovieService } from '../shared/movie.service';
   styleUrls: ['./seach.component.sass']
 })
 export class SeachComponent implements OnInit {
-  movies = []
+  movies = [];
+  movieDetail = [];
+
+  @Output('id') id = new EventEmitter<string>() ;
 
   constructor(private movieService: MovieService) { }
 
@@ -23,9 +26,10 @@ export class SeachComponent implements OnInit {
     //   this.movies.poster_path? this.movies
     // }) 
   }
-  getMovieDetail(event){
+  getMovieDetail(id){
     // const movieID = document.querySelectorAll('.movieCard');
-    console.log(event);
+    return  this.movieService.GetMovieDetails(id);
+    // console.log(id);
   }
 
 }

@@ -1,48 +1,32 @@
 
-    #image
-        height:100%
-        width: 100%   
-           
-        img   
-            position: relative
-            width: 100%
-            height: 100%
-            background-repeat: no-repeat
-            background-size: cover
-            display: block
-            z-index: -1
-
-.has-search .form-control 
-        position: absolute
-        bottom: 45%
-        display: flex
-        width: 40%
-        left: 29%
+.form-control:focus 
+  box-shadow: none
 
 
-.has-search 
-    .form-control-feedback 
-        position: absolute
-        z-index: 2
-        display: block
-        width: 2.375rem
-        height: 2.375rem
-        line-height: 2.375rem
-        text-align: center
-        pointer-events: none
-        color: #7c6464
+.form-control-underlined 
+  border-width: 0
+  border-bottom-width: 1px
+  border-radius: 0
+  padding-left: 0
 
 
-.input-group-append .btn 
-    position: absolute
-    z-index: 2
-    align-items: center
-    left: 64%
-    display: flex
-    top: 50%
+.form-control::placeholder 
+  font-size: 0.95rem
+  color: #aaa
+  font-style: italic
 
-.btn-secondary 
-    color: #8888
-    background-color: white
-    border: none
+.search 
+    position: relative
+    top: 100px
 
+.page-holder 
+  min-height: 100vh
+
+
+.bg-cover 
+    background-image: url('https://i.postimg.cc/ZnHTP71s/aircraft-airplane-boat-1575833.jpg')
+    background-size: cover
+    min-height: 95vh
+
+.shadow 
+    position: relative

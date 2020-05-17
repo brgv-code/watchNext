@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class MovieService {
   movieList = [];
+  api_key = 'bd485c6f6e25c230e7e0cd73d0bbb20c';
   constructor(private _http: HttpClient) {  
     
   }
@@ -17,7 +18,7 @@ export class MovieService {
   this._http 
   .get('https://api.themoviedb.org/3/search/movie',{
   params: {
-    api_key: 'enter your API key',
+    api_key: 'bd485c6f6e25c230e7e0cd73d0bbb20c',
     query: searchVal
   }})
   // .pipe(map(responseData => {
@@ -30,14 +31,11 @@ export class MovieService {
   })
   }
   GetMovieDetails(id: string){
-    this._http 
-  .get('https://api.themoviedb.org/3/movie/'+id+'/images',{
-  params: {
-    api_key: 'enter your API key',
-  }})
-  .subscribe(movieDetail => {
-    console.log("moviedetails",movieDetail)
-  })
+   return this._http 
+  .get('https://api.themoviedb.org/3/movie/'+id+'?api_key='+this.api_key+'&lanhuage=en-US');
+  // .subscribe((movieDetail: any) => {
+  //   //console.log("moviedetails",movieDetail)
+  // })
   }
 }
 
