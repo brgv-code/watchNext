@@ -4,7 +4,6 @@ import { NgModule,NO_ERRORS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HttpClientModule } from '@angular/common/http';
 
 import {  MatToolbarModule, 
@@ -27,6 +26,9 @@ import { PostComponent } from './post/post.component';
 import { SeachComponent } from './seach/seach.component';
 
 
+import { DurationPipe } from './shared/time.pipe';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,8 @@ import { SeachComponent } from './seach/seach.component';
     FooterComponent,
     HeaderComponent,
     PostComponent,
-    SeachComponent
+    SeachComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
@@ -52,12 +55,11 @@ import { SeachComponent } from './seach/seach.component';
     MatSidenavModule,
     MatCardModule,
     MatInputModule,
-    MDBBootstrapModule.forRoot(),
     HttpClientModule
     
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [DurationPipe],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

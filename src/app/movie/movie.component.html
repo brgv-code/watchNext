@@ -1,39 +1,41 @@
+<div class="movie__bg" [ngStyle] ="{'background-image':  'url(' + path +')'}">
 <div class="container">
   <div class="movie">
-    <img
-      src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}"
-      alt="{{ movie.title }}"
-      class="movie__img"
-    />
+    <img src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}" alt="{{ movie.title }}" class="movie__img" />
     <div class="movie__info col-2-of-2">
       <h2 class="movie__info--title">{{ movie.title }}</h2>
       <h6 class="movie__info--tagline">{{ movie.tagline }}</h6>
       <div class="movie__control">
         <div class="movie__control--rating" title="Rating">
-            {{ movie.vote_average }}
+          {{ movie.vote_average }}
         </div>
-        <div
-          class="movie__control__modal"
-          style="transform: translateY(-100vh); opacity: 0;"
-        ></div>
-        <button
-          type="button"
-          id="watchlist-btn"
-          class="movie__watchlist__btn btn btn-success btn-primary"
-        >
+        <button type="button" id="watchlist-btn" class="movie__watchlist__btn btn btn-success btn-primary">
           <i class="far fa-bookmark" aria-hidden="true"></i>
           Add to my Watchlist
         </button>
       </div>
       <p class="movie__overview">{{ movie.overview }}</p>
       <div>
-        <span class="mr-2">Genres:</span>
-        <span
-          class="mb-1 badge badge-warning"
-          *ngFor="let genre of movie.genres"
-          >{{ genre.name }}</span
-        >
+        <span class="movie__genre">Genres:</span>
+        <span class=" movie__genre--type badge badge-warning" *ngFor="let genre of movie.genres">{{ genre.name }}</span>
       </div>
     </div>
+    <div class="movie__stat">
+   <div> 
+     <i class="far fa-clock movie__icon" aria-hidden="true" > </i>
+      Release Date : 
+      {{movie.release_date | date}}
+    </div>
+    <div> 
+      <i class="fas fa-history movie__icon" aria-hidden="true" > </i>
+       Duration : 
+       {{movie.runtime | durationPipe}}
+     </div>
+     <div> 
+      <i class="far fa-money-bill-alt movie__icon" aria-hidden="true" > </i>
+       Budget : ${{movie.budget | number }}
+     </div>
+    </div>
   </div>
+</div>
 </div>
