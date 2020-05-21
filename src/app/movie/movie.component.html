@@ -1,4 +1,7 @@
-<div class="movie__bg" [ngStyle] ="{'background-image':  'url(' + path +')'}">
+<app-header></app-header>
+<div class="movie__bg" [ngStyle] ="{'background-image':  'url(' + path + ')', 'background-position': 'center', 'background-size': 'cover',
+'background-color': 'rgba(255, 255, 255, .9)'}">
+<div class="bg-filter">
 <div class="container">
   <div class="movie">
     <img src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}" alt="{{ movie.title }}" class="movie__img" />
@@ -37,5 +40,6 @@
      </div>
     </div>
   </div>
+</div>
 </div>
 </div>

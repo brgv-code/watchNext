@@ -1,32 +1,99 @@
 
-.form-control:focus 
-  box-shadow: none
+.container
+  // position: relative
+  height: 100vh
+  overflow: hidden
+  .home
+    
+    // .logo
+    //   position: absolute
+    //   z-index: 10
+    //   top: 0
+    //   left: 0
+    //   padding: 0
+    &__header 
+      // position: relative
+      // padding: 1rem
+      font-size: 1.2rem
+      .nav
+        z-index: 10
+        position: relative
+        &__links
+          display: flex
+          justify-content: flex-end
+          align-items: center
+          height: 4rem
+          &:last-child
+            padding-right: 1rem
+          .search-container
+            height: 2rem
+            position: relative
+            #searchInput
+              background-color: transparent
+              border-radius: 100px
+              border: 1px solid yellow
+              width: 20rem
+              height: 2.5rem
+              &::placeholder 
+                padding: .5rem
+                color: #fff
+            .search-btn
+              position: absolute
+              top: 30%
+              left: 90%
+              color: #ffffff
+              .fa-searchengin::before
+                color: yellow
 
-
-.form-control-underlined 
-  border-width: 0
-  border-bottom-width: 1px
-  border-radius: 0
-  padding-left: 0
-
-
-.form-control::placeholder 
-  font-size: 0.95rem
-  color: #aaa
-  font-style: italic
-
-.search 
-    position: relative
-    top: 100px
-
-.page-holder 
-  min-height: 100vh
-
-
-.bg-cover 
-    background-image: url('https://i.postimg.cc/ZnHTP71s/aircraft-airplane-boat-1575833.jpg')
-    background-size: cover
-    min-height: 95vh
-
-.shadow 
-    position: relative
+        &__item
+          list-style: none
+          margin-left: 10rem
+    &__background
+      box-shadow: inset 0 0 100px black
+      // min-height: 100%
+      // height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      
+      &--img
+        z-index: -1
+        filter: brightness(55%)
+       
+          
+    &__info 
+      position: absolute
+      top: 25rem
+      color: #fff
+      left: 16rem
+      &--title
+        font-size: 6rem
+        font-weight: 400     
+      &--genre
+        font-size: 1rem
+        font-weight: 100 
+        margin: 1rem
+      &--watch
+        margin-top: 4rem
+// .wrapper
+//   position: relative
+.arrow
+  cursor: pointer
+  position: absolute
+  top: 50%
+  margin-top: -50px
+  width: 0
+  height: 0
+  border-style: solid
+  z-index: 999
+#arrow-left
+  border-width: 30px 40px 30px 0
+  border-color: transparent #fff transparent transparent
+  left: 0
+  margin-left: 3rem
+#arrow-right
+  border-width: 30px 0 30px 40px
+  border-color: transparent  transparent transparent #fff
+  right: 0
+  margin-right: 3rem
+  

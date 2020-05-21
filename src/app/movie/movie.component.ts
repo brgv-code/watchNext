@@ -36,7 +36,7 @@ this.getMoviefromService(this.id);
    this._movie.GetMovieDetails(this.id)
    .subscribe( moviedetail => {
      this.movie = moviedetail;
-     this.path = 'https://image.tmdb.org/t/p/w1280/'+this.movie.poster_path;
+     this.path = 'https://image.tmdb.org/t/p/w1280/'+this.movie.backdrop_path;
     console.log("movie Details", moviedetail);
    });
   }

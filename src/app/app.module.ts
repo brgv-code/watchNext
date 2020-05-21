@@ -14,6 +14,8 @@ import {  MatToolbarModule,
           MatCardModule,
           MatInputModule
         } from  '@angular/material';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { MovieComponent } from './movie/movie.component';
 import { TvshowsComponent } from './tvshows/tvshows.component';
@@ -55,7 +57,8 @@ import { DurationPipe } from './shared/time.pipe';
     MatSidenavModule,
     MatCardModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
     
   ],
   schemas: [NO_ERRORS_SCHEMA],

@@ -1,26 +1,70 @@
-<div 
-  class="page-holder">
-  <div class="bg-cover">
-<div class="container overflow-hidden">
-  <div class="row mb-5">
-    <div class="col-lg-8 mx-auto search">
-      <div class="bg-white p-5 rounded shadow">
-        <form>
-          <div class="row mb-4">
-            <div class="form-group col-md-9">
-              <input id="searchInput" type="text" placeholder="What're you searching for?"
-                class="form-control form-control-underlined">
-            </div>
-            <div class="form-group col-md-3">
-              <button routerLink="search" (click)="FetchMovies()" type="submit"
-                class="btn btn-primary rounded-pill btn-block shadow-sm">Search</button>
-            </div>
+<div class="container">
+  <div class="home">
+
+    <div class="home__header">
+
+      <header>
+
+        <ul class=" nav nav__links">
+          <li class="nav__item">
+            <form class="search-container">
+              <input type="text" id="searchInput" placeholder="Search movies/Shows etc..!">
+              <span class="search-btn"><a routerLink="search" (click)="FetchMovies()"><i
+                    class="fab fa-searchengin"></i></a></span>
+            </form>
+          </li>
+          <li class="nav__item">
+            Movies
+          </li>
+          <li class="nav__item">
+            TV/Shows
+          </li>
+          <li class="nav__item">
+            Wishlist
+          </li>
+          <li class="nav__item">
+            Profile
+          </li>
+        </ul>
+      </header>
+      <div class="wrapper">
+        
+          <div id="arrow-left" class="arrow"></div>
+          <div class="slider">
+          <div class=" home__background">
+            <img src="https://image.tmdb.org/t/p/w1280//3dPhs7hUnQLphDFzdkD407VZDYo.jpg" alt="image"
+              class="home__background--img">
+              <div class="home__info">
+                <h1 class="home__info--title">Martian</h1>
+                <h3 class="home__info--genre">Adventure SCI-FI Thriller</h3>
+                <button class="btn btn-warning home__info--watch"> Watch Trailer <i class="fas fa-play-circle"></i>
+                </button>
+              </div>
           </div>
-        </form>
+          <div class=" home__background">
+            <img src="https://image.tmdb.org/t/p/w1280//4ZSlTfkHtgTTupCaLbseXQQzZha.jpg" alt="image"
+              class="home__background--img">
+              <div class="home__info">
+                <h1 class="home__info--title">Dark Waters</h1>
+                <h3 class="home__info--genre">Adventure Thriller</h3>
+                <button class="btn btn-warning home__info--watch"> Watch Trailer <i class="fas fa-play-circle"></i>
+                </button>
+              </div>
+          </div>
+          <div class=" home__background">
+            <img src="https://image.tmdb.org/t/p/w1280//cfT29Im5VDvjE0RpyKOSdCKZal7.jpg" alt="image"
+              class="home__background--img">
+              <div class="home__info">
+                <h1 class="home__info--title">Dark Knight</h1>
+                <h3 class="home__info--genre">Adventure SCI-FI Thriller</h3>
+                <button class="btn btn-warning home__info--watch"> Watch Trailer <i class="fas fa-play-circle"></i>
+                </button>
+              </div>
+          </div>
         </div>
+          <div id="arrow-right" class="arrow"></div>
+        
       </div>
+
     </div>
   </div>
-</div>
-</div>
-

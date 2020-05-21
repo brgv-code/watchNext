@@ -1,4 +1,7 @@
 @import '../../styles'
+
+.bg-filter
+    backdrop-filter: blur(1.5px) brightness(70%)
     
 .container
     display: flex
@@ -20,6 +23,9 @@
         grid-template-columns: 300px 1fr 
         background-color: rgba(0,0,0,.5)
         color: #dee2e6
+        &__bg
+            background-size: cover
+            background-position: center  
         &__img
             width: 300px
             grid-area: image
@@ -88,7 +94,7 @@
         &__icon
             font-size: 2rem
             display: inline-block
-            margin-right: 1rem
+            margin-right: .25rem
     
 .badge    
     margin-right: 10px

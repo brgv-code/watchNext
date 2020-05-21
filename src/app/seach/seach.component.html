@@ -1,6 +1,7 @@
 <!-- <div class="secondary-text">
   <h3>Showing results for {{movie.title}}</h3>
 </div> -->
+<app-header></app-header>
 <div class="img-responsive">
   <div class="movieListContainer" *ngIf="getMovies()">
     <div  routerLink="/movie/{{movie.id}}" class=" row movieCard" *ngFor="let movie of movies"(click)="getMovieDetail(movie.id)">
