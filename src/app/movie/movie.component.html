@@ -1,10 +1,9 @@
-<app-header></app-header>
-<div class="movie__bg" [ngStyle] ="{'background-image':  'url(' + path + ')', 'background-position': 'center', 'background-size': 'cover',
-'background-color': 'rgba(255, 255, 255, .9)'}">
+<!-- <app-header></app-header> -->
+<div class="movie__bg" [ngStyle] ="{'background-image':  'url(' + path + ')'}">
 <div class="bg-filter">
 <div class="container">
   <div class="movie">
-    <img src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}" alt="{{ movie.title }}" class="movie__img" />
+    <img src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}"  onerror="this.src='../../assets/images/data_image_png;base….png'" alt="{{ movie.title }}" class="movie__img" />
     <div class="movie__info col-2-of-2">
       <h2 class="movie__info--title">{{ movie.title }}</h2>
       <h6 class="movie__info--tagline">{{ movie.tagline }}</h6>
@@ -38,6 +37,11 @@
       <i class="far fa-money-bill-alt movie__icon" aria-hidden="true" > </i>
        Budget : ${{movie.budget | number }}
      </div>
+    </div>
+  </div>
+  <div class="actor__gallery">
+    <div class="actor__gallery-container">
+
     </div>
   </div>
 </div>

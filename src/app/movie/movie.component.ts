@@ -36,7 +36,11 @@ this.getMoviefromService(this.id);
    this._movie.GetMovieDetails(this.id)
    .subscribe( moviedetail => {
      this.movie = moviedetail;
+     if(this.movie.backdrop_path) {
      this.path = 'https://image.tmdb.org/t/p/w1280/'+this.movie.backdrop_path;
+     } else {
+       this.path = '../../assets/images/bg_search.jpg';
+     }
     console.log("movie Details", moviedetail);
    });
   }

@@ -1,5 +1,13 @@
 @import '../../styles'
 
+.movie__bg
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+    background-position: center
+    background-size: cover
+    background-color: rgba(255, 255, 255, .9)
 .bg-filter
     backdrop-filter: blur(1.5px) brightness(70%)
     
@@ -28,6 +36,7 @@
             background-position: center  
         &__img
             width: 300px
+            height: 100%
             grid-area: image
             -webkit-animation: animateScale 1s ease
             animation: animateScale 1s ease
@@ -47,12 +56,12 @@
             &--tagline
                 -webkit-animation: animateOpacity 2s ease
                 animation: animateOpacity 2s ease
-                margin-bottom: 15px
-                font-size: 2em
+                font-size: 2rem
                 margin-bottom: 1.5rem
-                font-weight: 500
+                font-weight: 900
                 line-height: 1.2
                 color: #fff
+                text-transform: none
         &__control
             margin-bottom: 2rem
             &--rating
@@ -71,9 +80,10 @@
                 border-radius: 50%
                 border: 2px solid #28a745
         &__overview 
-            font-size: 2rem
+            font-size: 1.8rem
             font-weight: 400
-            margin-bottom: 20px
+            margin-bottom: 2rem
+            line-height: 1.4
         &__genre
             margin-right: .8rem
             font-size: 1.6rem
@@ -101,4 +111,7 @@
     font-size: 1.6rem
     font-weight: 100
 
+.actor__gallery
+    &-container
+        height: 80rem
         

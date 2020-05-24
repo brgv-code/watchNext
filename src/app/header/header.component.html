@@ -1,18 +1,23 @@
 
 <mat-toolbar> 
     <mat-toolbar-row>
-      <button mat-icon-button>
+      <!-- <button mat-icon-button>
         <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
-      </button> 
+      </button>  -->
        <h1><a routerLink = "home"> watchNext </a></h1>
       <span class="menu-spacer"></span>
       <div class="menu-items">
+        <form autocomplete="off">
+          <a>
+            <label for="searchInput"></label>
+          <i class="fa fa-search" (click)="FetchMovies()" 
+              id ="search-btn" type= "button"></i>
+        </a>
+          <input type="text"  autofocus id="searchInput" placeholder="" #input name="input" onfocus = "this.value=''">
+        </form>
         <a mat-button [routerLink]="'/home'"> Home </a>
         <a mat-button [routerLink]="'/movie'"> Movie</a>
-        <a mat-button [routerLink]="'/tv-shows'"> TV Shows</a>
-        <a mat-button [routerLink]="'/trending'"> Trending </a>
-        <a mat-button [routerLink]="'/top-imdb'"> Top IMDB</a>
-        <a mat-button [routerLink]="'/episodes'"> Episodes</a>
+      
       </div>
     </mat-toolbar-row>
   </mat-toolbar> 

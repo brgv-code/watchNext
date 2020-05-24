@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
+  
   sliderSelector = <HTMLElement[]><any>document.querySelectorAll('.home__background');
   arrowLeft = document.querySelector('#arrow-left');
   arrowRight = document.querySelector('#arrow-right');

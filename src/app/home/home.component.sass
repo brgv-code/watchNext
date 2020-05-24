@@ -1,10 +1,11 @@
 
 .container
+  background-color: #333
   // position: relative
-  height: 100vh
+  // height: 100vh
   overflow: hidden
   .home
-    
+    overflow-y: hidden
     // .logo
     //   position: absolute
     //   z-index: 10
@@ -25,40 +26,32 @@
           height: 4rem
           &:last-child
             padding-right: 1rem
-          .search-container
-            height: 2rem
-            position: relative
-            #searchInput
-              background-color: transparent
-              border-radius: 100px
-              border: 1px solid yellow
-              width: 20rem
-              height: 2.5rem
-              &::placeholder 
-                padding: .5rem
-                color: #fff
-            .search-btn
-              position: absolute
-              top: 30%
-              left: 90%
-              color: #ffffff
-              .fa-searchengin::before
-                color: yellow
+          
 
         &__item
           list-style: none
           margin-left: 10rem
-    &__background
-      box-shadow: inset 0 0 100px black
-      // min-height: 100%
-      // height: 100%
+    .bg-blur
       position: absolute
       top: 0
       left: 0
+      transform: scale(2)
+      filter: brightness(.7) blur(2px)
+    &__background
+      // margin-top: 2rem
+      box-shadow: inset 0 0 100px black
+      // min-height: 100%
+      height: 100vh
+      // position: absolute
+      // top: 50%
+      // left: 50%
+      // transform: translate(-50% , -50%) scaleX(.9) scaleY(.8)
       
       &--img
         z-index: -1
-        filter: brightness(55%)
+        width: 100vw        
+        // filter: brightness(55%)
+       
        
           
     &__info 
@@ -67,33 +60,38 @@
       color: #fff
       left: 16rem
       &--title
-        font-size: 6rem
-        font-weight: 400     
+        font-size: 4rem!important
+        font-weight: 300!important
+        line-height: 3rem!important
       &--genre
         font-size: 1rem
         font-weight: 100 
         margin: 1rem
       &--watch
         margin-top: 4rem
-// .wrapper
-//   position: relative
-.arrow
-  cursor: pointer
+.carousel, .slide
+  display: block
+  width: 100%
+  height: 100vh
   position: absolute
-  top: 50%
-  margin-top: -50px
-  width: 0
-  height: 0
-  border-style: solid
-  z-index: 999
-#arrow-left
-  border-width: 30px 40px 30px 0
-  border-color: transparent #fff transparent transparent
+  top: 0
   left: 0
-  margin-left: 3rem
-#arrow-right
-  border-width: 30px 0 30px 40px
-  border-color: transparent  transparent transparent #fff
-  right: 0
-  margin-right: 3rem
+// .carousel-inner    
+//   &.carousel-item
+//     &.active
+//      transform: translateX(0)
+//     &:not(.active)
+//       animation: slideOut 1s !important
+
   
+// @keyframes slideIn
+//   0% 
+//     transform: translateX(100%)
+//   100% 
+//     transform: translateX(0)
+// @keyframes slideOut
+//   0% 
+//     transform: translateX(0)
+//   100% 
+//     transform: translateX(-100%)
+    

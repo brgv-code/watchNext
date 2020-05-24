@@ -1,9 +1,64 @@
 .menu-items
     margin-left: auto
+    margin-right: 8rem
+    display: flex
 .mat-toolbar
     background: transparent
     .mat-toolbar-row
         z-index: 10
 a 
     text-decoration: none
-    color: black
+    color: #fff
+
+form
+    margin: 0  2rem
+    position: relative
+input 
+    margin-right : 1.2rem
+    width: 0rem
+    background: transparent
+    border: none
+    border-radius: 0
+    position: relative
+    box-sizing: border-box
+    // cursor: pointer
+    transition: 1s linear
+    font-family: inherit
+    font-size: 1.4rem
+    color: #fff
+    // &:focus 
+    //   outline: none
+    //   width: 25rem
+    //   border: 1px solid #fff
+    //   border-radius: 10rem
+    &::placeholder
+        font-size: 1.5rem
+        color: #fff
+        padding-left: 1rem
+        opacity: .5
+        bottom: 3px
+    
+
+        
+
+i 
+    position: absolute
+    right: 25px
+    top: 5px
+    z-index: 2
+    cursor: pointer
+    transition: transform .2s ease
+    &:hover
+        color: #fff
+        transform: scale(1.1)
+
+
+input.expand  
+    outline: none
+    width: 25rem
+    border: 1px solid #fff
+    border-radius: 10rem
+    padding-left: 1rem
+
+.fa-search::before
+    font-size: 1.5rem
