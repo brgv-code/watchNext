@@ -32,10 +32,11 @@ export class MovieService {
   }
   GetMovieDetails(id: string){
    return this._http 
-  .get('https://api.themoviedb.org/3/movie/'+id+'?api_key='+this.api_key+'&lanhuage=en-US');
+  .get('https://api.themoviedb.org/3/movie/'+id+'?api_key='+this.api_key+'&append_to_response=credits,videos,images');
   // .subscribe((movieDetail: any) => {
   //   //console.log("moviedetails",movieDetail)
   // })
   }
+
 }
 
