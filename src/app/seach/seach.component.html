@@ -6,7 +6,7 @@
   <div class="movieListContainer" *ngIf="getMovies()">
     <div  routerLink="/movie/{{movie.id}}" class=" row movieCard" *ngFor="let movie of movies"(click)="getMovieDetail(movie.id)">
      <div class="col-sm-6 col-md-12 card">
-        <img class="card-img-top" src="https://image.tmdb.org/t/p/w185/{{movie.poster_path}}" onerror="this.src= '../../assets/images/error.png'" alt="Card image cap" />
+        <img class="card-img-top" src="https://image.tmdb.org/t/p/w185/{{movie.poster_path}}"  alt="Card image cap" />
         <div class="card-body">
           <h5 class="card-title">{{movie.title}}</h5>
           <!-- <p class="card-text">{{movie.overview | slice :0:100}}...</p> -->

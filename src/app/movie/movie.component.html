@@ -4,7 +4,7 @@
     <div class="container">
       <div class="movie">
         <img src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}"
-          onerror="this.src='../../assets/images/error.png'" alt="{{ movie.title }}"
+           alt="{{ movie.title }}"
           class="movie__img" />
         <div class="movie__info col-2-of-2">
           <h2 class="movie__info--title">{{ movie.title }}</h2>
@@ -59,7 +59,7 @@
 
           <div class="actor-card" *ngFor="let actor of actors;index as i">
             <img src="https://image.tmdb.org/t/p/w185/{{ actor.profile_path }}"
-              onerror="this.src='../../assets/images/error.png'" alt="{{ actor.name}}" />
+               alt="{{ actor.name}}" />
             <div class="actor-name">
               <h3>{{ actor.name }}</h3>
             </div>
@@ -91,7 +91,7 @@
         <div class="movieListContainer">
           <div  routerLink="/movie/{{recommendation.id}}" class=" row movieCard" *ngFor="let recommendation of recommendations" (click)="getMoviefromService(recommendation.id)">
            <div class="col-sm-6 col-md-12 card">
-              <img class="card-img-top" src="https://image.tmdb.org/t/p/w185/{{recommendation.poster_path}}" onerror="this.src= '../../assets/images/error.png'" alt="Card image cap" />
+              <img class="card-img-top" src="https://image.tmdb.org/t/p/w185/{{recommendation.poster_path}}"  alt="Card image cap" />
               <div class="card-body">
                 <h5 class="card-title">{{recommendation.title}}</h5>
                 <!-- <p class="card-text">{{movie.overview | slice :0:100}}...</p> -->
