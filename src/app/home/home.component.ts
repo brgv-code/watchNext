@@ -22,10 +22,14 @@ export class HomeComponent implements OnInit {
     this.startSlide();
   }
   
-  FetchMovies(id?){
+  FetchMovies(){
     let searchInput = (<HTMLInputElement>document.querySelector('#searchInput')).value;
      this.movieService.GetMovies(searchInput);
      this.router.navigate(['/search']);
+  }
+
+  showMovieDetail(id){
+    this.movieService.GetMovieDetails(id);
   }
 
   resetSlider() {
