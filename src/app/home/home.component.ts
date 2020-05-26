@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
     this.startSlide();
   }
   
-  FetchMovies(){
+  FetchMovies(id?){
     let searchInput = (<HTMLInputElement>document.querySelector('#searchInput')).value;
      this.movieService.GetMovies(searchInput);
      this.router.navigate(['/search']);

@@ -1,66 +1,106 @@
 <!-- <app-header></app-header> -->
-<div class="movie__bg" [ngStyle] ="{'background-image':  'url(' + path + ')'}">
-<div class="bg-filter">
-<div class="container">
-  <div class="movie">
-    <img src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}"  onerror="this.src='../../assets/images/data_image_png;base….png'" alt="{{ movie.title }}" class="movie__img" />
-    <div class="movie__info col-2-of-2">
-      <h2 class="movie__info--title">{{ movie.title }}</h2>
-      <h6 class="movie__info--tagline">{{ movie.tagline }}</h6>
-      <div class="movie__control">
-        <div class="movie__control--rating" title="Rating">
-          {{ movie.vote_average }}
+<div class="movie__bg" [ngStyle]="{'background-image':  'url(' + path + ')'}">
+  <div class="bg-filter">
+    <div class="container">
+      <div class="movie">
+        <img src="https://image.tmdb.org/t/p/w300/{{ movie.poster_path }}"
+          onerror="this.src='../../assets/images/data_image_png;base….png'" alt="{{ movie.title }}"
+          class="movie__img" />
+        <div class="movie__info col-2-of-2">
+          <h2 class="movie__info--title">{{ movie.title }}</h2>
+          <h6 class="movie__info--tagline">{{ movie.tagline }}</h6>
+          <div class="movie__control">
+            <div class="movie__control--rating" title="Rating">
+              {{ movie.vote_average }}
+            </div>
+            <button type="button" id="watchlist-btn" class="movie__watchlist__btn btn btn-success btn-primary">
+              <i class="far fa-bookmark" aria-hidden="true"></i>
+              Add to my Watchlist
+            </button>
+          </div>
+          <p class="movie__overview">{{ movie.overview }}</p>
+          <div>
+            <span class="movie__genre">Genres:</span>
+            <span class=" movie__genre--type badge badge-warning"
+              *ngFor="let genre of movie.genres">{{ genre.name }}</span>
+          </div>
         </div>
-        <button type="button" id="watchlist-btn" class="movie__watchlist__btn btn btn-success btn-primary">
-          <i class="far fa-bookmark" aria-hidden="true"></i>
-          Add to my Watchlist
-        </button>
+        <div class="movie__stat">
+          <div>
+            <i class="far fa-clock movie__icon" aria-hidden="true"> </i>
+            Release Date :
+            {{movie.release_date | date}}
+          </div>
+          <div>
+            <i class="fas fa-history movie__icon" aria-hidden="true"> </i>
+            Duration :
+            {{movie.runtime | durationPipe}}
+          </div>
+          <div>
+            <i class="far fa-money-bill-alt movie__icon" aria-hidden="true"> </i>
+            Budget : ${{movie.budget | number }}
+          </div>
+        </div>
       </div>
-      <p class="movie__overview">{{ movie.overview }}</p>
-      <div>
-        <span class="movie__genre">Genres:</span>
-        <span class=" movie__genre--type badge badge-warning" *ngFor="let genre of movie.genres">{{ genre.name }}</span>
+      <div class="actor__gallery">
+        <div class="actor__gallery-heading">
+          <h2>Cast</h2>
+          <div class="actor__gallery-heading-btn">
+            <input type="checkbox" class="checkbox" id="checkbox" (change)="toggle($event)">
+            <label for="checkbox" class="label">
+              <div class="ball"></div>
+            </label>
+          </div>
+        </div>
+        <div id="gallery-container" class="actor__gallery-container">
+          <!-- <div class="arrow arrow-left" id="left-arr" tabindex="1" (click)="sliderLeft()"> -->
+          <!-- <i class="fas fa-arrow-left"></i> -->
+          <!-- </div> -->
+
+          <div class="actor-card" *ngFor="let actor of actors;index as i">
+            <img src="https://image.tmdb.org/t/p/w185/{{ actor.profile_path }}"
+              onerror="this.src='../../assets/images/data_image_png;base….png'" alt="{{ actor.name}}" />
+            <div class="actor-name">
+              <h3>{{ actor.name }}</h3>
+            </div>
+          </div>
+          <!-- <div class="arrow arrow-right" tabindex="1" (click)="sliderRight()"> -->
+          <!-- <i class="fas fa-arrow-right"></i> -->
+          <!-- </div> -->
+        </div>
       </div>
-    </div>
-    <div class="movie__stat">
-   <div> 
-     <i class="far fa-clock movie__icon" aria-hidden="true" > </i>
-      Release Date : 
-      {{movie.release_date | date}}
-    </div>
-    <div> 
-      <i class="fas fa-history movie__icon" aria-hidden="true" > </i>
-       Duration : 
-       {{movie.runtime | durationPipe}}
-     </div>
-     <div> 
-      <i class="far fa-money-bill-alt movie__icon" aria-hidden="true" > </i>
-       Budget : ${{movie.budget | number }}
-     </div>
+      <!-- <div class="movie__gallery">
+          <div class="movie__gallery-title">
+            <h3>Gallery</h3>
+            <div class="image-gallery" aria-live="polite">
+              <div class="image-gallery-content">
+                <div class="image-gallery-slide-wrapper bottom">
+                  <button type="button" class="image-gallery-fullscreen-button" aria-label="Open Fullscreen"><i class="fas fa-expand"></i></button>
+                  <button type="button" class="image-gallery-play-button" aria-label="Play or Pause Slideshow"><i class="fas fa-play"></i></button>
+                </div>
+                <span></span>
+                <div class="image-gallery-thumbnails-wrapper bottom">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+      </div> -->
+      <div class="movie-recommendations">
+        <h3 class="recom-title">Recommendations</h3>
+        <div class="movieListContainer">
+          <div  routerLink="/movie/{{recommendation.id}}" class=" row movieCard" *ngFor="let recommendation of recommendations" (click)="getMoviefromService(recommendation.id)">
+           <div class="col-sm-6 col-md-12 card">
+              <img class="card-img-top" src="https://image.tmdb.org/t/p/w185/{{recommendation.poster_path}}" onerror="this.src= '../../assets/images/data_image_png;base….png'" alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">{{recommendation.title}}</h5>
+                <!-- <p class="card-text">{{movie.overview | slice :0:100}}...</p> -->
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div>
+        </div>
+      </div>
+      </div>
     </div>
   </div>
-  <div class="actor__gallery">
-    <div class="actor__gallery-heading">
-      <h2>Cast</h2>
-      <div class="actor__gallery-heading-btn">
-        <input type="checkbox" class="checkbox" id="checkbox" (change)="toggle($event)" >
-      <label for="checkbox" class="label">
-        <div class="ball"></div>
-      </label>
-      </div>
-    </div>
-    <div id = "gallery-container" class="actor__gallery-container">
-      <!-- <div class="arrow arrow-left" id="left-arr" tabindex="1" (click)="sliderLeft()"> -->
-        <!-- <i class="fas fa-arrow-left"></i> -->
-      <!-- </div> -->
-      <div class="actor-card" *ngFor="let actor of actors;index as i" >
-        <img src="https://image.tmdb.org/t/p/w185/{{ actor.profile_path }}"  onerror="this.src='../../assets/images/data_image_png;base….png'" alt="{{ actor.name}}" />
-      </div>
-      <!-- <div class="arrow arrow-right" tabindex="1" (click)="sliderRight()"> -->
-        <!-- <i class="fas fa-arrow-right"></i> -->
-      <!-- </div> -->
-    </div>
-  </div>
-</div>
-</div>
 </div>

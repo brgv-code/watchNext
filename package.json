@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~9.1.9",
     "@angular/router": "~9.1.9",
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
+    "@kolkov/ngx-gallery": "^1.2.0",
     "@ng-bootstrap/ng-bootstrap": "^5.3.1",
     "bootstrap": "^4.5.0",
     "chart.js": "^2.5.0",

@@ -32,10 +32,15 @@ export class MovieService {
   }
   GetMovieDetails(id: string){
    return this._http 
-  .get('https://api.themoviedb.org/3/movie/'+id+'?api_key='+this.api_key+'&append_to_response=credits,videos,images');
+  .get('https://api.themoviedb.org/3/movie/'+id+'?api_key='+this.api_key+'&append_to_response=credits,videos,images,recommendations&language=en-US&page=1');
   // .subscribe((movieDetail: any) => {
   //   //console.log("moviedetails",movieDetail)
   // })
+  }
+
+  getPopularMovies() {
+    return this._http
+    .get('https://api.themoviedb.org/3/movie/popular?api_key='+this.api_key+'&language=en-US&page=1');
   }
 
 }

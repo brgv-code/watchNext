@@ -31,5 +31,9 @@ export class HeaderComponent implements OnInit {
     } 
      
   }
+  getPopularMovies() {
+    this.movieService.getPopularMovies();
+    this.router.navigate(['/search']);
+  }
 
 }

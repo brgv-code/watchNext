@@ -5,19 +5,26 @@
         <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
       </button>  -->
        <h1><a routerLink = "home"> watchNext </a></h1>
+       <form autocomplete="off">
+        <a>
+          <label for="searchInput"></label>
+        <i class="fa fa-search" (click)="FetchMovies()" 
+            id ="search-btn" type= "button"></i>
+      </a>
+        <input type="text"  autofocus id="searchInput" placeholder="" #input name="input" onfocus = "this.value=''">
+      </form>
       <span class="menu-spacer"></span>
       <div class="menu-items">
-        <form autocomplete="off">
-          <a>
-            <label for="searchInput"></label>
-          <i class="fa fa-search" (click)="FetchMovies()" 
-              id ="search-btn" type= "button"></i>
-        </a>
-          <input type="text"  autofocus id="searchInput" placeholder="" #input name="input" onfocus = "this.value=''">
-        </form>
+       
         <a mat-button [routerLink]="'/home'"> Home </a>
-        <a mat-button [routerLink]="'/movie'"> Movie</a>
+        <!-- <a mat-button [routerLink]="'/movie'" (click)="getPopularMovies()"> Movie</a> -->
       
+      </div>
+      <div class="user-profile">
+        <div class="user-img">
+          <img src="../../assets/images/user-img.jpg" alt="Julian Wah">
+          <span class="user-name"> Julian Wah</span>
+        </div>
       </div>
     </mat-toolbar-row>
   </mat-toolbar> 

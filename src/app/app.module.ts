@@ -7,6 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+
+
+
+
 import { HomeComponent } from './home/home.component';
 import { MovieComponent } from './movie/movie.component';
 import { FooterComponent } from './footer/footer.component';
@@ -34,7 +39,8 @@ import { GestureConfig } from "../gesture-config";
     BrowserAnimationsModule,
     HttpClientModule,
     NgbModule,
-    MaterialModule
+    MaterialModule,
+    NgxGalleryModule
     
   ],
   schemas: [NO_ERRORS_SCHEMA],
