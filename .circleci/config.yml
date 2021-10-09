@@ -1,27 +1,73 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/2.0/configuration-reference
-version: 2.1
-orbs:
-  jira: circleci/jira@1.3.1
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+  component-A:
     docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+      - image: 'circleci/node:10'
     steps:
       - checkout
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+      - run: exit 0
+      - jira/notify
+    working_directory: ~/repo
+  component-B:
+    docker:
+      - image: 'circleci/node:10'
+    steps:
+      - checkout
+      - run: sleep 2
+      - jira/notify
+    working_directory: ~/repo
+  deploy:
+    docker:
+      - image: 'circleci/node:10'
+    steps:
+      - checkout
+      - run: echo "hi Jira"
+    working_directory: ~/repo
+  integration:
+    docker:
+      - image: 'circleci/node:10'
+    steps:
+      - checkout
+      - run: echo "hi Jira"
+      - jira/notify
+    working_directory: ~/repo
+orbs:
+  jira: circleci/jira@1.3.1
+version: 2.1
 workflows:
-  say-hello-workflow:
+  build-deploy:
     jobs:
-      - say-hello
+      - component-A
+      - component-B
+      - integration:
+          requires:
+            - component-A
+            - component-B
+      - deploy:
+          name: Dev East
+          post-steps:
+            - jira/notify:
+                environment_type: development
+                job_type: deployment
+          requires:
+            - integration
+      - deploy:
+          name: Test East
+          post-steps:
+            - jira/notify:
+                environment_type: testing
+                job_type: deployment
+          requires:
+            - Dev East
+      - hold:
+          name: Verify
+          requires:
+            - Test East
+          type: approval
+      - deploy:
+          name: Prod East
+          post-steps:
+            - jira/notify:
+                environment_type: production
+                job_type: deployment
+          requires:
+            - Verify
